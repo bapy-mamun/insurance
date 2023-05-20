@@ -1,0 +1,21 @@
+.a-button {
+  $root: &;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background-color: #1db573;
+  color: #fafafa;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    background-color: #fafafa;
+    color: #1db573;
+    border: 1px solid #1db573;
+  }
+}

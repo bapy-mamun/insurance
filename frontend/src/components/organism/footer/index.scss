@@ -1,0 +1,14 @@
+.o-footer {
+  $root: &;
+
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+
+  &__copyright {
+    font-size: 16px;
+    opacity: 0.4;
+  }
+}
