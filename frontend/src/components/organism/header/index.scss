@@ -1,0 +1,52 @@
+.o-global-header {
+  $root: &;
+
+  height: 72px;
+  padding: 0 200px;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 54px -30px rgba(0, 0, 0, 0.75);
+
+  &__logo {
+    position: relative;
+    color: #1db573;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__navItems {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  &__navItem {
+    color: #202020;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 3px;
+      background-color: #1db573;
+      position: absolute;
+      bottom: -10px;
+      width: 0%;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
