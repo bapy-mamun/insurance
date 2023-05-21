@@ -1,11 +1,12 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import { Button } from "./components/atoms/button";
-import { Header } from "./components/organism/header";
-import Home from "./pages/home";
-import BuyInsurance from "./pages/buy-insurance";
-import Footer from "./components/organism/footer";
 import './index.scss';
+
+import React from 'react';
+import { BrowserRouter as Router,Route, Routes } from 'react-router-dom';
+
+import Footer from './components/organism/footer';
+import { Header } from './components/organism/header';
+import BuyInsurance from './pages/buy-insurance';
+import Home from './pages/home';
 
 function App() {
   return (

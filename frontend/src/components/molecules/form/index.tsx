@@ -1,18 +1,12 @@
-import React from "react";
-import "./index.scss";
-import { Button } from "../../atoms/button";
+import './index.scss';
 
-interface FormProps {
-  children?: React.ReactNode;
-}
+import React from 'react';
 
-const ReactFormLabel = (title: string) => {
-  return <label>{title}</label>;
-};
+import { Button } from '../../atoms/button';
 
 const Form = () => {
   return (
-    <form className="m-form" onSubmit={() => {}}>
+    <form className="m-form">
       <p className="m-form__title">Buy Insurance</p>
 
       <fieldset className="m-form__formGroup">

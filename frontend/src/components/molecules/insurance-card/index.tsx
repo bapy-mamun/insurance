@@ -1,5 +1,6 @@
-import React from "react";
-import "./index.scss";
+import './index.scss';
+
+import React from 'react';
 
 interface InsuranceCardProps {
   image?: string;
@@ -7,11 +8,7 @@ interface InsuranceCardProps {
   desc?: string;
 }
 
-const InsuranceCard = ({
-  image,
-  title,
-  desc,
-}: InsuranceCardProps) => {
+const InsuranceCard = ({ image, title, desc }: InsuranceCardProps) => {
   return (
     <article className="m-insuranceCard">
       <div className="m-insuranceCard__imgBox">
@@ -19,7 +16,7 @@ const InsuranceCard = ({
           src={
             image
               ? image
-              : "https://images.unsplash.com/photo-1473167052083-3d31fa1f6776?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQwNzU4ODl8&ixlib=rb-4.0.3&q=85"
+              : 'https://images.unsplash.com/photo-1473167052083-3d31fa1f6776?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODQwNzU4ODl8&ixlib=rb-4.0.3&q=85'
           }
           alt="Insurance Image"
         />
@@ -28,12 +25,10 @@ const InsuranceCard = ({
         </div>
       </div>
       <h2 className="m-insuranceCard__title">
-        <a href="#">{title ? title : "Insurance"}</a>
+        <a href="#">{title ? title : 'Insurance'}</a>
       </h2>
       <p className="m-insuranceCard__text">
-        {desc
-          ? desc
-          : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, repudiandae. Lorem"}
+        {desc ? desc : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, repudiandae. Lorem'}
       </p>
     </article>
   );

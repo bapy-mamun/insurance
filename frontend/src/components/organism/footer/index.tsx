@@ -1,5 +1,6 @@
-import React from "react";
-import "./index.scss";
+import './index.scss';
+
+import React from 'react';
 
 interface FooterProps {
   children?: React.ReactNode;

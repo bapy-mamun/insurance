@@ -1,8 +1,10 @@
-import React from "react";
-import "./index.scss";
-import { Heading } from "../../components/atoms/heading";
-import InsuranceCard from "../../components/molecules/insurance-card";
-import { Button } from "../../components/atoms/button";
+import './index.scss';
+
+import React from 'react';
+
+import { Button } from '../../components/atoms/button';
+import { Heading } from '../../components/atoms/heading';
+import InsuranceCard from '../../components/molecules/insurance-card';
 
 const Home: React.FC = () => {
   return (

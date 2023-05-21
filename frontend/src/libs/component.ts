@@ -1,5 +1,3 @@
-
-
 type MapModifiersModifier = string | false | null | undefined | (string | false | null | undefined)[];
 
 function generateModifierClassNameArray(baseClassName: string, ...modifiers: MapModifiersModifier[]): string[] {
@@ -30,5 +28,3 @@ export function mapModifiers(baseClassName: string, ...modifiers: MapModifiersMo
 }
 
 export type ModifierProp<M extends string> = M | M[];
-
-
