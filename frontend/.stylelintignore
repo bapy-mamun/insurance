@@ -1,0 +1,9 @@
+*.tsx
+*.ts
+*.js
+
+node_modules
+package-lock.json
+public
+.github
+.vscode

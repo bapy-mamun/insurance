@@ -1,6 +1,8 @@
-import React from "react";
-import "./index.scss";
-import Form from "../../components/molecules/form";
+import './index.scss';
+
+import React from 'react';
+
+import Form from '../../components/molecules/form';
 
 const BuyInsurance: React.FC = () => {
   return (
@@ -9,7 +11,7 @@ const BuyInsurance: React.FC = () => {
         <Form />
       </div>
     </div>
-  )
+  );
 };
 
 export default BuyInsurance;
