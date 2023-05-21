@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const databaseName = "insurance";
+const databaseName = "insurance_db";
 
 const connectDB = async () => {
   const MONGO_URI = process.env.MONGO_URI;

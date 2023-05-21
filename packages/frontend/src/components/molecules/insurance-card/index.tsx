@@ -1,17 +1,13 @@
 import React from "react";
 import "./index.scss";
+import type { InsuranceProduct } from "../../../utils/types";
 
-interface InsuranceCardProps {
-  image?: string;
-  title?: string;
-  desc?: string;
-}
-
-const InsuranceCard = ({
+const InsuranceCard: React.FC<InsuranceProduct> = ({
+  name,
   image,
-  title,
-  desc,
-}: InsuranceCardProps) => {
+  type,
+  price,
+}: InsuranceProduct) => {
   return (
     <article className="m-insuranceCard">
       <div className="m-insuranceCard__imgBox">
@@ -28,13 +24,9 @@ const InsuranceCard = ({
         </div>
       </div>
       <h2 className="m-insuranceCard__title">
-        <a href="#">{title ? title : "Insurance"}</a>
+        <a href="#">{name ? name : "Insurance"}</a>
       </h2>
-      <p className="m-insuranceCard__text">
-        {desc
-          ? desc
-          : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, repudiandae. Lorem"}
-      </p>
+      <p className="m-insuranceCard__text">{price ? price : "0"}</p>
     </article>
   );
 };
