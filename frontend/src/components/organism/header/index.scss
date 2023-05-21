@@ -16,6 +16,8 @@
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 
     &:hover {
       opacity: 0.8;
