@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-const InsuranceProducts = require("../models/InsuranceProducts");
+const InsuranceProduct = require("../models/InsuranceProduct");
 
 const getAllInsuranceProducts = async (req: Request, res: Response) => {
   try {
-    const insuranceProducts = await InsuranceProducts.find();
+    const insuranceProducts = await InsuranceProduct.find();
     console.log('insuranceProducts', insuranceProducts);
     res.status(200).json({ insuranceProducts });
 

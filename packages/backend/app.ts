@@ -11,6 +11,7 @@ const port = 8080;
 
 //Route files
 const insuranceProductsRoutes = require("./routes/insuranceProducts");
+const customersRoutes = require("./routes/customers");
 
 // middleware
 app.use(express.json());
@@ -23,6 +24,7 @@ app.use(
 
 //Mount routers
 app.use("/api/insuranceProducts", insuranceProductsRoutes);
+app.use("/api/customers", customersRoutes);
 
 const start = async () => {
   try {

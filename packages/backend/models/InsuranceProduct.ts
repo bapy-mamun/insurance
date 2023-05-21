@@ -20,4 +20,4 @@ const InsuranceProductSchema = new mongoose.Schema({
   },
 }, { collection: 'insuranceProducts' });
 
-module.exports = mongoose.model("insuranceProducts", InsuranceProductSchema);
+module.exports = mongoose.model("InsuranceProduct", InsuranceProductSchema);
