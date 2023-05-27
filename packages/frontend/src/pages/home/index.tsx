@@ -11,7 +11,14 @@ const Home: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "http://localhost:8080/api/insuranceProducts"
+        "http://localhost:8080/api/insuranceProducts",
+        {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
       );
       const data = await response.json();
       console.log(data);
