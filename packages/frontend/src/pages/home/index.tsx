@@ -1,25 +1,22 @@
-import React, { useEffect, useState } from "react";
-import "./index.scss";
-import { Heading } from "../../components/atoms/heading";
-import InsuranceCard from "../../components/molecules/insurance-card";
-import { Button } from "../../components/atoms/button";
-import type { InsuranceProduct } from "../../utils/types";
+import React, { useEffect, useState } from 'react';
+import './index.scss';
+import { Heading } from '../../components/atoms/heading';
+import InsuranceCard from '../../components/molecules/insurance-card';
+import { Button } from '../../components/atoms/button';
+import type { InsuranceProduct } from '../../utils/types';
 
 const Home: React.FC = () => {
   const [insuranceData, setInsuranceData] = useState<InsuranceProduct[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
-        "http://localhost:8080/api/insuranceProducts",
-        {
-          method: "GET",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch('http://localhost:8080/api/insuranceProducts', {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      });
       const data = await response.json();
       console.log(data);
       setInsuranceData(data.insuranceProducts);

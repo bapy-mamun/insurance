@@ -6,7 +6,9 @@
   "scripts": {
     "client": "cd packages/frontend && npm start",
     "server": "cd packages/backend && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "prettier:fix-frontend": "prettier --check --write 'packages/frontend/src/**/**/*.{ts,tsx,scss,json}'",
+    "prettier:fix-backend": "prettier --check --write 'packages/backend/**/*.{ts,tsx}'"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,8 @@
   "homepage": "https://github.com/bapy-mamun/insurance#readme",
   "dependencies": {
     "concurrently": "^8.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
   }
 }

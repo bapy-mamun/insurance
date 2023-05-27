@@ -37,7 +37,7 @@
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       display: block;
       height: 3px;
       background-color: $color-primary;
