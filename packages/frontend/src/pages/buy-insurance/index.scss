@@ -2,5 +2,24 @@
   $root: &;
 
   padding: 50px 200px 100px;
-  
+
+  &__payementFormButtons {
+    display: flex;
+    gap: 50px;
+  }
+
+  &__payementCard {
+    width: 400px;
+    margin: 32px 0;
+    padding: 32px;
+    border-radius: 5px;
+    background-color: #1db57330;
+
+    h2 {
+      margin-top: 0;
+    }
+    span {
+      margin-left: 5px;
+    }
+  }
 }

@@ -38,7 +38,7 @@ const Home: React.FC = () => {
         ))}
       </div>
       <div className="p-home__buyInsuranceButton">
-        <Button>Buy Insurance</Button>
+        <Button href="/buy-insurance">Buy Insurance</Button>
       </div>
     </div>
   );

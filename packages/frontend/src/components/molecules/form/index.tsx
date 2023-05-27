@@ -1,16 +1,48 @@
 import React from "react";
 import "./index.scss";
 import { Button } from "../../atoms/button";
+import { Customer, InsuranceProduct } from "../../../utils/types";
 
 interface FormProps {
-  children?: React.ReactNode;
+  customerData: Customer;
+  setCustomerData: React.Dispatch<React.SetStateAction<Customer>>;
+  insuranceData: InsuranceProduct[];
+  setFormStep: React.Dispatch<React.SetStateAction<"step1" | "step2">>;
 }
 
-const ReactFormLabel = (title: string) => {
-  return <label>{title}</label>;
-};
+const Form = ({ customerData, setCustomerData, insuranceData, setFormStep }: FormProps) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
 
-const Form = () => {
+    setCustomerData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    // console.log(e, e.target.name, e.target.value)
+    setCustomerData((prev) => ({
+      ...prev,
+      insuranceProductId: e.target.value,
+    }));
+  }
+
+  const getPrice = () => {
+    if (customerData.insuranceProductId) {
+      const found = insuranceData.find(
+        (item) => customerData.insuranceProductId === item._id
+      );
+      if (found) {
+        return found.price;
+      }
+    }
+    return "";
+  };
+  console.log(insuranceData);  
+
+
+
   return (
     <form className="m-form" onSubmit={() => {}}>
       <p className="m-form__title">Buy Insurance</p>
@@ -23,8 +55,8 @@ const Form = () => {
           name="name"
           type="text"
           required
-          // onChange={this.handleChange}
-          // value={this.state.name}
+          onChange={handleChange}
+          value={customerData.name}
         />
       </fieldset>
 
@@ -36,39 +68,40 @@ const Form = () => {
           name="email"
           type="email"
           required
-          // onChange={this.handleChange}
-          // value={this.state.email}
+          onChange={handleChange}
+          value={customerData.email}
         />
       </fieldset>
 
       <fieldset className="m-form__formGroup">
-        <label>Phone</label>
+        <label>Age</label>
         <input
           id="formSubject"
           className="m-form__formInput"
-          name="subject"
-          type="text"
+          name="age"
+          type="number"
           required
-          // onChange={this.handleChange}
-          // value={this.state.subject}
+          onChange={handleChange}
+          value={customerData.age}
         />
       </fieldset>
 
       <div className="m-form__formGroup">
         <label>Insurance</label>
-        <select className="m-form__formInput">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
+        <select className="m-form__formInput" onChange={handleSelectChange}>
+          {insuranceData.map((data) => (
+            <option key={data._id} value={data._id}>
+              {data.name}
+            </option>
+          ))}
         </select>
       </div>
       <div className="m-form__formGroup">
         <label>Price</label>
-        <input className="m-form__formInput" type="text" />
+        <input className="m-form__formInput" type="text" value={getPrice()} onChange={() => {}}/>
       </div>
       <div className="m-form__submit">
-        <Button>Submit</Button>
+        <Button onClick={() => {setFormStep("step2")}}>Next</Button>
       </div>
     </form>
   );
