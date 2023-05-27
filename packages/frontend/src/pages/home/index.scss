@@ -1,18 +1,21 @@
+@import '../../styles/variables.scss';
+
 .p-home {
   $root: &;
   padding: 0 200px;
 
   &__sectionHeading {
-    font-size: 24px;
+    font-size: 20px;
+    color: $color-primary;
   }
 
   &__insuranceListContainer {
+    min-height: 360px;
     padding: 40px 0 100px;
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
     justify-content: space-between;
-    //width: calc(100vw - 200px);
     margin: 0 auto;
   }
 

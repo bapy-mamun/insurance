@@ -1,9 +1,11 @@
+@import '../../../styles/variables.scss';
+
 .o-global-header {
   $root: &;
 
   height: 72px;
   padding: 0 200px;
-  background-color: #fafafa;
+  background-color: $color-white-primary;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,7 +13,7 @@
 
   &__logo {
     position: relative;
-    color: #1db573;
+    color: $color-primary;
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
@@ -31,14 +33,14 @@
   }
 
   &__navItem {
-    color: #202020;
+    color: $color-charcoal;
     position: relative;
 
     &::after {
       content: "";
       display: block;
       height: 3px;
-      background-color: #1db573;
+      background-color: $color-primary;
       position: absolute;
       bottom: -10px;
       width: 0%;

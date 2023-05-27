@@ -103,7 +103,7 @@ const BuyInsurance: React.FC = () => {
             <h2>Payement Amount</h2>
             <h3>
               {getPrice()}
-              <span>yen</span>
+              <span>¥</span>
             </h3>
           </div>
         </div>

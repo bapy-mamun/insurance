@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .o-footer {
   $root: &;
 
@@ -5,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fafafa;
+  background-color: $color-white-primary;
 
   &__copyright {
     font-size: 16px;
