@@ -1,0 +1,24 @@
+{
+  "name": "insurance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd packages/frontend && npm start",
+    "server": "cd packages/backend && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bapy-mamun/insurance.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bapy-mamun/insurance/issues"
+  },
+  "homepage": "https://github.com/bapy-mamun/insurance#readme",
+  "dependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
