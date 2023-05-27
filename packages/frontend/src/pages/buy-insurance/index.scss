@@ -1,3 +1,6 @@
+@import '../../styles/variables.scss';
+@import '../../styles/animations.scss';
+
 .p-buyInsurance {
   $root: &;
 
@@ -13,7 +16,8 @@
     margin: 32px 0;
     padding: 32px;
     border-radius: 5px;
-    background-color: #1db57330;
+    background-color: $color-bg-primary;
+    @include fade-in-up;
 
     h2 {
       margin-top: 0;

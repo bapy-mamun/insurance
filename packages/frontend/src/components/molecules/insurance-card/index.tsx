@@ -20,13 +20,13 @@ const InsuranceCard: React.FC<InsuranceProduct> = ({
           alt="Insurance Image"
         />
         <div className="m-insuranceCard__imgBlur">
-          <a href="#">Explore</a>
+          <a href="/buy-insurance">Buy</a>
         </div>
       </div>
       <h2 className="m-insuranceCard__title">
-        <a href="#">{name ? name : "Insurance"}</a>
+        <a href="/buy-insurance">{name ? name : "Insurance"}</a>
       </h2>
-      <p className="m-insuranceCard__text">{price ? price : "0"}</p>
+      <p className="m-insuranceCard__text">{price ? price : "0"}¥</p>
     </article>
   );
 };

@@ -1,3 +1,7 @@
+
+@import '../../../styles/variables.scss';
+@import '../../../styles/animations.scss';
+
 .m-insuranceCard {
   $root: &;
 
@@ -7,12 +11,21 @@
   align-items: center;
   width: 250px;
   height: 360px;
-  background: #fff;
+  background: $color-white-primary;
   border-radius: 15px;
   text-align: center;
   transition: 0.3s;
   flex: 1;
   cursor: pointer;
+  opacity: 0;
+  @include fade-in-up;
+
+  &:nth-child(2) {
+    animation-delay: .2s;
+  }
+  &:nth-child(3) {
+    animation-delay: .4s;
+  }
 
   &:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -61,14 +74,14 @@
       width: 155px;
       height: 155px;
       border-radius: 50%;
-      border: 2px dotted #fff;
+      border: 2px dotted $color-white;
       pointer-events: none;
       animation: border-anime 15s linear infinite;
     }
 
     & > a {
       text-decoration: none;
-      color: #fff;
+      color: $color-white;
       letter-spacing: 1px;
     }
   }
@@ -78,26 +91,17 @@
 
     & > a {
       font-size: 1.6rem;
-      color: #555;
+      color: $color-charcoal;
       text-decoration: none;
       transition: 0.4s;
     }
   }
 
   &__text {
-    font-size: 0.8rem;
-    line-height: 1.5em;
-    color: #555;
+    font-size: 1.2rem;
+    line-height: 1em;
+    color: $color-charcoal;
     opacity: 0.6;
     padding: 0 20px;
-  }
-}
-
-@keyframes border-anime {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }

@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .a-button {
   $root: &;
 
@@ -8,13 +10,13 @@
   font-size: 16px;
   border: none;
   border-radius: 30px;
-  background-color: #1db573;
-  color: #fafafa;
+  background-color: $color-primary;
+  color: $color-white-primary;
   cursor: pointer;
   transition: all .3s ease-in-out;
 
   &:hover {
-    background-color: #fafafa;
-    color: #1db573;
+    background-color: $color-white-primary;
+    color: $color-primary;
   }
 }
