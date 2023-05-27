@@ -4,7 +4,7 @@ import type { InsuranceProduct } from '../../../utils/types';
 
 const InsuranceCard: React.FC<InsuranceProduct> = ({ name, image, type, price }: InsuranceProduct) => {
   return (
-    <article className="m-insuranceCard">
+    <a href="/buy-insurance" className="m-insuranceCard">
       <div className="m-insuranceCard__imgBox">
         <img
           src={
@@ -14,15 +14,11 @@ const InsuranceCard: React.FC<InsuranceProduct> = ({ name, image, type, price }:
           }
           alt="Insurance Image"
         />
-        <div className="m-insuranceCard__imgBlur">
-          <a href="/buy-insurance">Buy</a>
-        </div>
+        <div className="m-insuranceCard__imgBlur">Buy</div>
       </div>
-      <h2 className="m-insuranceCard__title">
-        <a href="/buy-insurance">{name ? name : 'Insurance'}</a>
-      </h2>
-      <p className="m-insuranceCard__text">{price ? price : '0'}¥</p>
-    </article>
+      <h2 className="m-insuranceCard__title">{name ? name : 'Insurance'}</h2>
+      <p className="m-insuranceCard__text">{price ? price : '0'} ¥</p>
+    </a>
   );
 };
 
