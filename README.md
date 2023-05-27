@@ -33,8 +33,6 @@
 
 Insurance is a way to manage your risk. When you buy insurance, you purchase protection against unexpected financial losses. The insurance company pays you or someone you choose if something bad happens to you. In `INSURANCE HUB` you can easily get your vehicle insurance.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Built With
 
 This application is built with several technologies. Here they are -
@@ -55,15 +53,7 @@ Make sure latest node version
 Node v18.3.0 or latest
 ```
 
-You can install the project bu following steps...
-
 ### Installation
-
-Install global ts-node
-
-```sh
-npm install -g ts-node
-```
 
 Clone the repo
 
@@ -71,7 +61,13 @@ Clone the repo
 git clone git@github.com:bapy-mamun/insurance.git
 ```
 
-Run inside root directory to install NPM packages
+Install global ts-node
+
+```sh
+npm install -g ts-node
+```
+
+Run inside root `/` directory to install NPM packages
 
 ```sh
 npm install
@@ -93,7 +89,7 @@ npm install
 
 ## Run Project
 
-Run inside `packages/` directory
+Run inside root `/` directory
 
 ```sh
 npm run dev
