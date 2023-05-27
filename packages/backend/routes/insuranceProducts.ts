@@ -1,8 +1,8 @@
-import express from 'express'
-const router = express.Router()
+import express from 'express';
+const router = express.Router();
 
-const {getAllInsuranceProducts} = require('../controllers/insuranceProducts')
+const { getAllInsuranceProducts } = require('../controllers/insuranceProducts');
 
-router.get('/', getAllInsuranceProducts)
+router.get('/', getAllInsuranceProducts);
 
-module.exports = router
+module.exports = router;

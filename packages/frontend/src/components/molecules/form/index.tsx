@@ -1,20 +1,20 @@
-import React from "react";
-import "./index.scss";
-import { Button } from "../../atoms/button";
-import { Customer, InsuranceProduct } from "../../../utils/types";
+import React from 'react';
+import './index.scss';
+import { Button } from '../../atoms/button';
+import { Customer, InsuranceProduct } from '../../../utils/types';
 
 interface FormProps {
   customerData: Customer;
   setCustomerData: React.Dispatch<React.SetStateAction<Customer>>;
   insuranceData: InsuranceProduct[];
-  setFormStep: React.Dispatch<React.SetStateAction<"step1" | "step2">>;
+  setFormStep: React.Dispatch<React.SetStateAction<'step1' | 'step2'>>;
 }
 
 const Form = ({ customerData, setCustomerData, insuranceData, setFormStep }: FormProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    setCustomerData((prev) => ({
+    setCustomerData(prev => ({
       ...prev,
       [name]: value,
     }));
@@ -22,26 +22,22 @@ const Form = ({ customerData, setCustomerData, insuranceData, setFormStep }: For
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     // console.log(e, e.target.name, e.target.value)
-    setCustomerData((prev) => ({
+    setCustomerData(prev => ({
       ...prev,
       insuranceProductId: e.target.value,
     }));
-  }
+  };
 
   const getPrice = () => {
     if (customerData.insuranceProductId) {
-      const found = insuranceData.find(
-        (item) => customerData.insuranceProductId === item._id
-      );
+      const found = insuranceData.find(item => customerData.insuranceProductId === item._id);
       if (found) {
         return found.price;
       }
     }
-    return "";
+    return '';
   };
-  console.log(insuranceData);  
-
-
+  console.log(insuranceData);
 
   return (
     <form className="m-form" onSubmit={() => {}}>
@@ -89,7 +85,7 @@ const Form = ({ customerData, setCustomerData, insuranceData, setFormStep }: For
       <div className="m-form__formGroup">
         <label>Insurance</label>
         <select className="m-form__formInput" onChange={handleSelectChange}>
-          {insuranceData.map((data) => (
+          {insuranceData.map(data => (
             <option key={data._id} value={data._id}>
               {data.name}
             </option>
@@ -98,10 +94,16 @@ const Form = ({ customerData, setCustomerData, insuranceData, setFormStep }: For
       </div>
       <div className="m-form__formGroup">
         <label>Price</label>
-        <input className="m-form__formInput" type="text" value={getPrice()} onChange={() => {}}/>
+        <input className="m-form__formInput" type="text" value={getPrice()} onChange={() => {}} />
       </div>
       <div className="m-form__submit">
-        <Button onClick={() => {setFormStep("step2")}}>Next</Button>
+        <Button
+          onClick={() => {
+            setFormStep('step2');
+          }}
+        >
+          Next
+        </Button>
       </div>
     </form>
   );
