@@ -3,6 +3,9 @@ import "./index.scss";
 import Form from "../../components/molecules/form";
 import { Customer, InsuranceProduct } from "../../utils/types";
 import { Button } from "../../components/atoms/button";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const initialCustomerData: Customer = {
   _id: "",
@@ -13,10 +16,10 @@ const initialCustomerData: Customer = {
 };
 
 const BuyInsurance: React.FC = () => {
+  const navigate = useNavigate();
   const [formStep, setFormStep] = React.useState<"step1" | "step2">("step1");
   const [insuranceData, setInsuranceData] = useState<InsuranceProduct[]>([]);
-  const [customerData, setCustomerData] =
-    useState<Customer>(initialCustomerData);
+  const [customerData, setCustomerData] = useState<Customer>(initialCustomerData);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,6 +52,17 @@ const BuyInsurance: React.FC = () => {
     });
 
     const content = await rawResponse.json();
+    toast.success("You have successfully bought the insurance!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+    navigate("/");
   };
 
   const handleNextPrevClick = () => {
@@ -87,7 +101,10 @@ const BuyInsurance: React.FC = () => {
           <Button onClick={handleNextPrevClick}>Go Back</Button>
           <div className="p-buyInsurance__payementCard">
             <h2>Payement Amount</h2>
-            <h3>{getPrice()}<span>yen</span></h3>
+            <h3>
+              {getPrice()}
+              <span>yen</span>
+            </h3>
           </div>
         </div>
       )}
