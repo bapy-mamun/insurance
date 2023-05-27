@@ -64,6 +64,7 @@
     align-items: center;
     opacity: 0;
     transition: 0.5s;
+    color: $color-white-primary;
 
     &::before {
       content: '';
@@ -76,12 +77,6 @@
       border: 2px dotted $color-white;
       pointer-events: none;
       animation: border-anime 15s linear infinite;
-    }
-
-    & > a {
-      text-decoration: none;
-      color: $color-white;
-      letter-spacing: 1px;
     }
   }
 
