@@ -1,6 +1,17 @@
 import { Request, Response } from 'express';
 const Customer = require('../models/Customer');
 
+const getAllCustomers = async (req: Request, res: Response) => {
+  try {
+    const customers = await Customer.find();
+
+    console.log('customer', customers);
+    res.status(201).json({ customers });
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
+};
+
 const createCustomer = async (req: Request, res: Response) => {
   try {
     const { name, email, age, insuranceProductId } = req.body;
@@ -28,4 +39,4 @@ const createCustomer = async (req: Request, res: Response) => {
   }
 };
 
-export { createCustomer };
+export { createCustomer, getAllCustomers };
