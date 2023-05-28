@@ -20,6 +20,9 @@ export const Header: React.FC<HeaderProps> = () => {
           <li className="o-global-header__navItem">
             <Link to="/buy-insurance">Get Insurance</Link>
           </li>
+          <li className="o-global-header__navItem">
+            <Link to="/customers">Customers</Link>
+          </li>
         </ul>
       </nav>
     </header>

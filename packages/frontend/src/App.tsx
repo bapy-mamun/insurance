@@ -4,6 +4,7 @@ import { Button } from './components/atoms/button';
 import { Header } from './components/organism/header';
 import Home from './pages/home';
 import BuyInsurance from './pages/buy-insurance';
+import Customer from './pages/customer';
 import Footer from './components/organism/footer';
 import './index.scss';
 import { ToastContainer } from 'react-toastify';
@@ -18,6 +19,7 @@ function App() {
             <Routes>
               <Route path="/" Component={Home} />
               <Route path="/buy-insurance" Component={BuyInsurance} />
+              <Route path="/customers" Component={Customer} />
             </Routes>
           </div>
           <Footer />

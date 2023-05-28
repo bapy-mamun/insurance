@@ -1,5 +1,70 @@
 @import '../../styles/variables.scss';
 
 .p-customer {
-  
+
+  padding: 50px 200px;
+  &__customersList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  &__customersItem {
+    padding: 20px;
+  }
+
+  h2,
+  p {
+    margin: 0;
+  }
+
+  &__card {
+    background-color: #fff;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    max-width: 400px;
+    min-height: 130px;
+    margin: 20px 0;
+    transition: all 0.5s ease;
+
+    &:hover {
+      box-shadow: 8px 28px 50px rgba(39, 44, 49, 0.07), 1px 6px 12px rgba(39, 44, 49, 0.04);
+      transform: translate3D(0, -1px, 0) scale(1.02);
+      transition: all 0.5s ease;
+    }
+  }
+
+  &__insurance {
+    margin-top: 10px;
+  }
+
+  &__name {
+    text-transform: capitalize;
+  }
+
+  &__insurance_name {
+    margin: 0;
+  }
+
+  &__insurance_email {
+    margin: 0;
+  }
+
+  &__insurance_title {
+    margin-bottom: 10px;
+  }
+
+  &__insurance_item {
+    padding: 0 15px;
+    margin-right: 5px;
+    line-height: 35px;
+    background-color: $color-white-primary;
+    border-radius: 5px;
+
+    display: inline-block;
+  }
 }
