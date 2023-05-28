@@ -11,13 +11,14 @@ const CustomerSchema = new mongoose.Schema(
     email: {
       type: String,
       match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please add a valid email'],
+      unique: true
     },
     age: {
       type: Number,
       required: [true, 'Please enter age'],
     },
     insuranceProductIds: {
-      type: [String],
+      type: [mongoose.Schema.Types.ObjectId],
       default: [],
     },
   },

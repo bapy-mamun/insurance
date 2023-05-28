@@ -11,7 +11,7 @@ const initialCustomerData: Customer = {
   _id: '',
   name: '',
   email: '',
-  age: 0,
+  age: 18,
   insuranceProductId: '',
 };
 
@@ -31,11 +31,11 @@ const BuyInsurance: React.FC = () => {
         },
       });
       const data = await response.json();
-      console.log(data);
+
       setInsuranceData(data.insuranceProducts);
 
       if (data.insuranceProducts && data.insuranceProducts.length) {
-        console.log(data.insuranceProducts);
+
         setCustomerData(prev => ({
           ...prev,
           insuranceProductId: data.insuranceProducts[0]._id,
@@ -56,6 +56,20 @@ const BuyInsurance: React.FC = () => {
     });
 
     const content = await rawResponse.json();
+
+    if (content.exists) {
+      toast.warn(`${content.msg}, Go back & Change Insurance`, {
+        position: 'top-right',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
+      return
+    }
     toast.success('You have successfully bought the insurance!', {
       position: 'top-right',
       autoClose: 2000,

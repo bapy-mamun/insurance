@@ -18,8 +18,6 @@ const Customer: React.FC = () => {
         },
       });
       const data = await response.json();
-      console.log(data);
-      //setCustomerData(data.insuranceProducts);
     };
     fetchData();
   }, []);
