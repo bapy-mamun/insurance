@@ -21,7 +21,6 @@ const Form = ({ customerData, setCustomerData, insuranceData, setFormStep }: For
   };
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    // console.log(e, e.target.name, e.target.value)
     setCustomerData(prev => ({
       ...prev,
       insuranceProductId: e.target.value,
@@ -37,10 +36,12 @@ const Form = ({ customerData, setCustomerData, insuranceData, setFormStep }: For
     }
     return '';
   };
-  console.log(insuranceData);
 
   return (
-    <form className="m-form" onSubmit={() => {}}>
+    <form className="m-form" onSubmit={(event) => {
+      event.preventDefault()
+      setFormStep('step2');
+    }}>
       <p className="m-form__title">Buy Insurance</p>
 
       <fieldset className="m-form__formGroup">
@@ -75,6 +76,7 @@ const Form = ({ customerData, setCustomerData, insuranceData, setFormStep }: For
           id="formSubject"
           className="m-form__formInput"
           name="age"
+          min={18}
           type="number"
           required
           onChange={handleChange}
@@ -97,13 +99,7 @@ const Form = ({ customerData, setCustomerData, insuranceData, setFormStep }: For
         <input className="m-form__formInput" type="text" value={getPrice()} onChange={() => {}} />
       </div>
       <div className="m-form__submit">
-        <Button
-          onClick={() => {
-            setFormStep('step2');
-          }}
-        >
-          Next
-        </Button>
+        <Button type='submit'>Next</Button>
       </div>
     </form>
   );
